@@ -1,0 +1,201 @@
+/* --- FILE CSS DÀNH RIÊNG CHO TRANG XEM CHI TIẾT SẢN PHẨM (detail.css) --- */
+
+.detail-page-container {
+    display: flex !important; /* Chia bố cục trang thành 2 cột song song */
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-top: 25px;
+    gap: 40px;
+}
+
+/* Định dạng cột hiển thị ảnh bên trái */
+.detail-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-box {
+    border: 1px solid #efefef;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.image-box img {
+    max-width: 100%;
+    width: 320px;
+    height: 420px;
+    object-fit: cover; /* Giữ nguyên tỷ lệ ảnh bìa sách không bị méo */
+    display: block;
+}
+
+/* Định dạng cột nội dung thông tin bên phải */
+.detail-right {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-main-title {
+    font-size: 26px;
+    font-weight: 500;
+    color: #222;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+
+/* Khối hiển thị giá tiền đỏ nổi bật kiểu Shopee */
+.shopee-price-card {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.price-label {
+    color: #757575;
+    font-size: 15px;
+    width: 100px;
+}
+
+.price-value {
+    color: #ee4d2d; /* Màu cam đỏ chuẩn Shopee */
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Khối chính sách vận chuyển */
+.shipping-policy {
+    padding: 10px 5px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+.policy-item {
+    display: flex;
+    font-size: 15px;
+}
+
+.policy-label {
+    color: #757575;
+    width: 100px;
+}
+
+.policy-text {
+    color: #333;
+}
+
+.text-blue { color: #007bff; margin-right: 5px; }
+.text-green { color: #28a745; margin-right: 5px; }
+
+/* --- KHU VỰC CHỌN SỐ LƯỢNG MỚI THÊM --- */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.qty-label {
+    color: #757575;
+    font-size: 15px;
+    width: 100px;
+}
+
+.qty-control-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.btn-qty-adjust {
+    background-color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #555;
+    transition: background 0.2s;
+}
+
+.btn-qty-adjust:hover {
+    background-color: #f0f0f0;
+}
+
+#buy-quantity {
+    width: 50px;
+    height: 32px;
+    border: none;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+}
+
+/* Cụm nút thao tác đặt hàng */
+.action-buttons-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Nút thêm vào giỏ màu nhạt viền đỏ */
+.btn-add-to-cart {
+    background-color: rgba(255, 87, 34, 0.1);
+    color: #ee4d2d;
+    border: 1px solid #ee4d2d;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s;
+}
+
+.btn-add-to-cart:hover {
+    background-color: rgba(255, 87, 34, 0.15);
+}
+
+/* Nút mua ngay màu cam đỏ đậm đổ bóng */
+.btn-buy-now {
+    background-color: #ee4d2d;
+    color: white;
+    padding: 14px 40px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.09);
+    transition: background 0.2s;
+}
+
+.btn-buy-now:hover {
+    background-color: #d73d20;
+}
+
+.back-link-box {
+    margin-top: auto;
+}
+
+.back-link-box a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.back-link-box a:hover {
+    text-decoration: underline;
+}

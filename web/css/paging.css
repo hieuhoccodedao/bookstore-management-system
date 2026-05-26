@@ -1,0 +1,32 @@
+/* --- FILE CSS DÀNH RIÊNG CHO PHÂN TRANG (paging.css) --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 8px;
+}
+
+.pagination a {
+    color: #333;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Kiểu dáng cho nút số trang đang được chọn */
+.pagination a.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+/* Hiệu ứng khi di chuột qua các nút số trang khác */
+.pagination a:hover:not(.active) {
+    background-color: #e4e6eb;
+    border-color: #bcc0c4;
+}

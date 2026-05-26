@@ -1,0 +1,394 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+}
+
+/* Header UI */
+.header-container {
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+}
+
+.header-container .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-bar {
+    width: 40%;
+}
+
+.search-bar input {
+    width: 85%;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-bar button {
+    width: 15%;
+    background-color: #002752;
+    border: none;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.user-actions a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.cart-icon {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 11px;
+}
+
+/* Layout Main Container */
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+/* Sidebar Layout */
+.sidebar {
+    flex: 1;
+    background-color: white;
+    padding: 25px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    border-bottom: 2px solid #f4f6f9;
+    padding-bottom: 10px;
+}
+
+.filter-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-group input {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.btn-apply {
+    width: 100%;
+    background-color: #4a8bf5;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.btn-apply:hover {
+    background-color: #357ae8;
+}
+
+/* Content Area */
+.content-area {
+    flex: 3;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    min-height: 450px;
+}
+
+.content-area h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.empty-message {
+    color: #666;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* Products Grid Layout */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #e1e4e8;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    background: #fff;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product-title {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 8px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.product-price {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.btn-buy {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* Footer layout */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #e1e4e8;
+}
+/* Thêm vào cuối file css/main.css */
+.cart-svg-icon {
+    width: 22px;
+    height: 22px;
+    color: white; /* Đổi màu xe đẩy thành trắng */
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+/* --- GIAO DIỆN HỘP THOẠI MÃ QR (MODAL POPUP) --- */
+.qr-modal {
+    display: none; /* Mặc định ẩn đi */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.6); /* Nền đen mờ */
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    width: 380px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.qr-modal-content h3 {
+    color: #28a745;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.qr-modal-content p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.qr-modal-content img {
+    width: 280px; /* Chiều rộng ảnh (bạn có thể tăng giảm tùy ý) */
+    height: auto; /* Quan trọng nhất: Để auto để ảnh tự căn chỉnh chiều cao không bị méo */
+    max-height: 450px; /* Đề phòng ảnh quá dài làm tràn màn hình */
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    padding: 5px;
+    object-fit: contain; /* Đảm bảo ảnh hiển thị trọn vẹn */
+}
+
+.close-qr-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-qr-btn:hover {
+    color: #333;
+}
+/* ========================================================
+   HIỆU ỨNG TÊN SINH VIÊN & HỘP THOẠI (FOOTER)
+   ======================================================== */
+
+.student-name-egg {
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* Tự động đổi màu khi lia chuột thay cho onmouseover */
+.student-name-egg:hover {
+    color: #007bff; 
+}
+
+/* Nền đen mờ bao phủ màn hình */
+.profile-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.7); 
+    align-items: center; 
+    justify-content: center;
+}
+
+/* Khối thông tin màu trắng ở giữa */
+.profile-modal-content {
+    background: white; 
+    padding: 25px; 
+    border-radius: 10px; 
+    
+    /* === SỬA DÒNG NÀY: Phóng to khung chứa === */
+    max-width: 700px; /* Tăng từ 450px lên 700px, ảnh sẽ tự to theo */
+    
+    position: relative; 
+    text-align: center; 
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Nút X tắt hộp thoại */
+.close-profile-btn {
+    position: absolute; 
+    right: 15px; 
+    top: 5px; 
+    font-size: 30px; 
+    cursor: pointer; 
+    color: #888; 
+    transition: color 0.2s;
+}
+
+.close-profile-btn:hover {
+    color: #333;
+}
+
+/* Tiêu đề hộp thoại */
+.profile-modal-content h3 {
+    color: #007bff; 
+    margin-bottom: 15px; 
+    font-family: sans-serif;
+}
+
+/* Ảnh thẻ sinh viên */
+.profile-modal-content img {
+    width: 100%; 
+    height: auto; 
+    
+    /* === BỔ SUNG DÒNG NÀY: Giới hạn chiều cao tối đa === */
+    max-height: 80vh; /* Giới hạn ảnh cao tối đa bằng 80% chiều cao màn hình */
+    
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/* ========================================================
+   GIAO DIỆN FORM ĐĂNG NHẬP / ĐĂNG KÝ (AUTH)
+   ======================================================== */
+.login-wrapper {
+    display: flex; justify-content: center; align-items: center; 
+    min-height: 70vh; background-color: #f5f5f5;
+}
+.login-box {
+    background: white; padding: 40px; border-radius: 8px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; max-width: 400px;
+}
+.login-box h2 {
+    text-align: center; color: #333; margin-bottom: 25px; font-size: 24px;
+}
+.form-group { margin-bottom: 20px; }
+.form-group label {
+    display: block; margin-bottom: 8px; color: #555; font-weight: 500;
+}
+.form-control {
+    width: 100%; padding: 12px; border: 1px solid #ddd; 
+    border-radius: 4px; box-sizing: border-box; font-size: 15px;
+}
+
+/* Nút bấm mặc định (Đăng nhập - Màu Đỏ) */
+.btn-submit {
+    width: 100%; padding: 12px; background: #ee4d2d; color: white; 
+    border: none; border-radius: 4px; font-size: 16px; 
+    font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+.btn-submit:hover { background: #d73d20; }
+
+/* Nút bấm Đăng ký (Màu xanh - Ghi đè màu đỏ) */
+.btn-register { background: #28a745; }
+    
+.btn-register:hover { background: #218838; }
+
+/* Thông báo Lỗi / Thành công */
+.error-msg {
+    color: #ee4d2d; background: rgba(238, 77, 45, 0.1); 
+    padding: 10px; border-radius: 4px; text-align: center; 
+    margin-bottom: 20px; font-size: 14px;
+}
+.success-msg {
+    color: #28a745; background: rgba(40, 167, 69, 0.1); 
+    padding: 10px; border-radius: 4px; text-align: center; 
+    margin-bottom: 20px; font-size: 14px;
+}
